@@ -3,8 +3,9 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header"><center>System Menu</center></li>
             
-            <li><a href="/index.php"> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>                       
-            
+        <li><a href="<?php echo base_url('dashboard') ?>"> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li><a href="<?php echo base_url('employee') ?>"> <i class="fa fa-users"></i> <span>Employee List</span></a></li>
+        
             <!--            
             <li class="treeview">
                 <a href="#"><i class="fa fa-files-o"></i> <span>Report</span>
