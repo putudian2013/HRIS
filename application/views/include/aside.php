@@ -3,9 +3,10 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header"><center>System Menu</center></li>
             
-            <li><a href="<?= base_url() ?>index.php"> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>            
+            <li><a href="/index.php"> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>                       
             
-<!--            <li class="treeview">
+            <!--            
+            <li class="treeview">
                 <a href="#"><i class="fa fa-files-o"></i> <span>Report</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
@@ -16,7 +17,8 @@
                     <li><a href="customer-working-hours.php?daterange=&shown=&customer=&employee="> <i class="fa fa-file"></i> <span>Customer Working Hours</span></a></li>            
                     <li><a href="project-working-hours.php?daterange=&shown=&project="> <i class="fa fa-file"></i> <span>Project Working Hours</span></a></li>
                 </ul>
-            </li>            -->
+            </li>            
+            -->
             
         </ul>
     </section>
