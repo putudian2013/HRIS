@@ -37,7 +37,7 @@
                         Religion List
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Organization</a></li>  
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Employee</a></li>  
                         <li>Master Data</li>
                         <li>Religion</li>
                     </ol>
