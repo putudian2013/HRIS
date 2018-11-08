@@ -16,3 +16,4 @@ This is my version of Human Resource Information System.
 - Master Data Employee - Religion
 - Master Data Employee - Marital Status
 - Master Data Employee - Tax Status
+- Master Data Employee - Race
