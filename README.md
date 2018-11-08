@@ -11,3 +11,4 @@ This is my version of Human Resource Information System.
 - Master Data Organization - Department
 - Master Data Organization - Section
 - Master Data Organization - Position
+- Master Data Employee - Employee Category
