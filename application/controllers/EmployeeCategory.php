@@ -10,14 +10,14 @@
         function index(){
             
             $data['employeeCategory'] = $this->EmployeeCategoryModel->getAllEmployeeCategory();           
-            $this->load->view('organization/masterdata/employee-category', $data);
+            $this->load->view('employee/masterdata/employee-category', $data);
             
         }               
         
         function add(){
                         
             $data["action"] = "add";
-            $this->load->view('organization/masterdata/employee-category-editor',$data);
+            $this->load->view('employee/masterdata/employee-category-editor',$data);
             
         }   
         
@@ -32,7 +32,7 @@
             
             $data["action"] = "edit";
             $data["employeeCategory"] = $this->EmployeeCategoryModel->getEmployeeCategory($employeeCategoryID);
-            $this->load->view('organization/masterdata/employee-category-editor',$data);
+            $this->load->view('employee/masterdata/employee-category-editor',$data);
             
         }
         

@@ -7,15 +7,15 @@
             
         <li class="<?php echo $segment == 'dashboard' ? 'active' : '' ?>"><a href="<?php echo base_url('dashboard') ?>"> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
-        <li class="treeview <?php echo $segment == 'employee' || $segment == 'employeeCategory' ? 'active' : '' ?>">
+        <li class="treeview <?php echo $segment == 'employee' || $segment == 'employeeCategory' || $segment == 'level'  ? 'active' : '' ?>">
             <a href="#"><i class="fa fa-users"></i> <span>Employee</span>
                 <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                 </span>
             </a>
             <ul class="treeview-menu">
-                <li class="<?php echo $segment == 'employee' ? 'active' : '' ?>"><a href="<?php echo base_url('employee') ?>"> <i class="fa fa-circle-o"></i> <span>Employee List</span></a></li>
-                <li class="treeview <?php echo $segment == 'employeeCategory' ? 'active' : '' ?>">
+                <li class="<?php echo $segment == 'employee' || $segment == 'level'  ? 'active' : '' ?>"><a href="<?php echo base_url('employee') ?>"> <i class="fa fa-circle-o"></i> <span>Employee List</span></a></li>
+                <li class="treeview <?php echo $segment == 'employeeCategory' || $segment == 'level' ? 'active' : '' ?>">
                     <a href="#"><i class="fa fa-list"></i> <span>Master</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -23,6 +23,7 @@
                     </a>
                     <ul class="treeview-menu">
                         <li class="<?php echo $segment == 'employeeCategory' ? 'active' : '' ?>"><a href="<?php echo base_url('employeeCategory') ?>"> <i class="fa fa-circle-o"></i> <span>Employee Category</span></a></li>                                   
+                        <li class="<?php echo $segment == 'level' ? 'active' : '' ?>"><a href="<?php echo base_url('level') ?>"> <i class="fa fa-circle-o"></i> <span>Level</span></a></li>
                     </ul>
                 </li>                
             </ul>
