@@ -55,19 +55,25 @@
             </ul>
         </li>
         
-                       
-<!--        <li class="treeview">
-            <a href="#"><i class="fa fa-list"></i> <span>Master Data</span>
+        <li class="treeview <?php echo $segment == 'taxStatus' ? 'active' : '' ?>">
+            <a href="#"><i class="fa fa-dollar"></i> <span>Payroll</span>
                 <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                 </span>
             </a>
             <ul class="treeview-menu">
-                
-                <li><a href="customer-working-hours.php?daterange=&shown=&customer=&employee="> <i class="fa fa-file"></i> <span>Customer Working Hours</span></a></li>            
-                <li><a href="project-working-hours.php?daterange=&shown=&project="> <i class="fa fa-file"></i> <span>Project Working Hours</span></a></li>
+                <li class="treeview <?php echo $segment == 'taxStatus'  ? 'active' : '' ?>">
+                    <a href="#"><i class="fa fa-list"></i> <span>Master</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu active">
+                        <li class="<?php echo $segment == 'taxStatus' ? 'active' : '' ?>"><a href="<?php echo base_url('taxStatus') ?>"> <i class="fa fa-circle-o"></i> <span>Tax Status</span></a></li>                                   
+                    </ul>
+                </li>                
             </ul>
-        </li>            -->
+        </li>                              
             
         </ul>
     </section>
