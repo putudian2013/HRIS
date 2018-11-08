@@ -28,14 +28,14 @@
             </ul>
         </li>
         
-        <li class="treeview <?php echo $segment == 'company' || $segment == 'division' || $segment == 'department' || $segment == 'section' ? 'active' : '' ?>">
+        <li class="treeview <?php echo $segment == 'company' || $segment == 'division' || $segment == 'department' || $segment == 'section' || $segment == 'position' ? 'active' : '' ?>">
             <a href="#"><i class="fa fa-sitemap"></i> <span>Organization</span>
                 <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                 </span>
             </a>
             <ul class="treeview-menu">
-                <li class="treeview <?php echo $segment == 'company' || $segment == 'division' || $segment == 'department' || $segment == 'section' ? 'active' : '' ?>">
+                <li class="treeview <?php echo $segment == 'company' || $segment == 'division' || $segment == 'department' || $segment == 'section' || $segment == 'position'  ? 'active' : '' ?>">
                     <a href="#"><i class="fa fa-list"></i> <span>Master</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -46,6 +46,7 @@
                         <li class="<?php echo $segment == 'division' ? 'active' : '' ?>"><a href="<?php echo base_url('division') ?>"> <i class="fa fa-circle-o"></i> <span>Division</span></a></li>            
                         <li class="<?php echo $segment == 'department' ? 'active' : '' ?>"><a href="<?php echo base_url('department') ?>"> <i class="fa fa-circle-o"></i> <span>Department</span></a></li>
                         <li class="<?php echo $segment == 'section' ? 'active' : '' ?>"><a href="<?php echo base_url('section') ?>"> <i class="fa fa-circle-o"></i> <span>Section</span></a></li>
+                        <li class="<?php echo $segment == 'position' ? 'active' : '' ?>"><a href="<?php echo base_url('position') ?>"> <i class="fa fa-circle-o"></i> <span>Position</span></a></li>
                     </ul>
                 </li>                
             </ul>
