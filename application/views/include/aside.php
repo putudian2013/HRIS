@@ -7,15 +7,15 @@
             
         <li class="<?php echo $segment == 'dashboard' ? 'active' : '' ?>"><a href="<?php echo base_url('dashboard') ?>"> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
-        <li class="treeview <?php echo $segment == 'employee' || $segment == 'employeeCategory' || $segment == 'level' || $segment == 'religion'  || $segment == 'maritalStatus' || $segment == 'race' ? 'active' : '' ?>">
+        <li class="treeview <?php echo $segment == 'employee' || $segment == 'employeeCategory' || $segment == 'level' || $segment == 'religion'  || $segment == 'maritalStatus' || $segment == 'race' || $segment == 'nationality' ? 'active' : '' ?>">
             <a href="#"><i class="fa fa-users"></i> <span>Employee</span>
                 <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                 </span>
             </a>
             <ul class="treeview-menu">
-                <li class="<?php echo $segment == 'employee' || $segment == 'level'  || $segment == 'religion'  || $segment == 'maritalStatus' || $segment == 'race' ? 'active' : '' ?>"><a href="<?php echo base_url('employee') ?>"> <i class="fa fa-circle-o"></i> <span>Employee List</span></a></li>
-                <li class="treeview <?php echo $segment == 'employeeCategory' || $segment == 'level' || $segment == 'religion'  || $segment == 'maritalStatus' || $segment == 'race' ? 'active' : '' ?>">
+                <li class="<?php echo $segment == 'employee' || $segment == 'level'  || $segment == 'religion'  || $segment == 'maritalStatus' || $segment == 'race' || $segment == 'nationality' ? 'active' : '' ?>"><a href="<?php echo base_url('employee') ?>"> <i class="fa fa-circle-o"></i> <span>Employee List</span></a></li>
+                <li class="treeview <?php echo $segment == 'employeeCategory' || $segment == 'level' || $segment == 'religion'  || $segment == 'maritalStatus' || $segment == 'race' || $segment == 'nationality' ? 'active' : '' ?>">
                     <a href="#"><i class="fa fa-list"></i> <span>Master</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -27,6 +27,7 @@
                         <li class="<?php echo $segment == 'religion' ? 'active' : '' ?>"><a href="<?php echo base_url('religion') ?>"> <i class="fa fa-circle-o"></i> <span>Religion</span></a></li>
                         <li class="<?php echo $segment == 'maritalStatus' ? 'active' : '' ?>"><a href="<?php echo base_url('maritalStatus') ?>"> <i class="fa fa-circle-o"></i> <span>Marital Status</span></a></li>
                         <li class="<?php echo $segment == 'race' ? 'active' : '' ?>"><a href="<?php echo base_url('race') ?>"> <i class="fa fa-circle-o"></i> <span>Race</span></a></li>
+                        <li class="<?php echo $segment == 'nationality' ? 'active' : '' ?>"><a href="<?php echo base_url('nationality') ?>"> <i class="fa fa-circle-o"></i> <span>Nationality</span></a></li>
                     </ul>
                 </li>                
             </ul>
