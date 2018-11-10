@@ -18,6 +18,13 @@
             
         }
         
+        function getSectionByDepartment($departmentID){
+            $result = $this->db->query("SELECT * FROM hr_section hs
+                                    inner join hr_department hdept on hs.department_id = hdept.department_id 
+                                    where hs.department_id ='$departmentID'");
+            return $result->result();
+	}
+        
         function getSection($sectionID){
             $result = $this->db->query("SELECT * FROM hr_section hs 
                 inner join hr_department hdept on hs.department_id = hdept.department_id 

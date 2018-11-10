@@ -89,7 +89,7 @@
                                         </div>
                                     </div>                                                                
                                     <div class="box-footer">                                                                                                            
-                                        <button type="submit" class="btn btn-primary"><?= ucwords($formAction) ?></button>
+                                        <button type="submit" class="btn btn-primary pull-right"><?= ucwords($formAction) ?></button>
                                         <a href="<?php echo base_url('nationality')?>" class="btn btn-default"> Cancel</a>
                                     </div> 
                                 </form>

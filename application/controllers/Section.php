@@ -15,7 +15,12 @@
             $data['section'] = $this->SectionModel->getAllSection();           
             $this->load->view('organization/masterdata/section', $data);
             
-        }               
+        }    
+        
+        function getSectionByDepartmentAjax($departmentID){            
+            $data = $this->SectionModel->getSectionByDepartment($departmentID);
+            echo json_encode($data);
+        }
         
         function add(){
             

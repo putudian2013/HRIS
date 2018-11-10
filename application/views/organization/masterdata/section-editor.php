@@ -112,7 +112,7 @@
                                         </div>
                                     </div>                                                                                                     
                                     <div class="box-footer">                                                                                                            
-                                        <button type="submit" class="btn btn-primary">Save</button>
+                                        <button type="submit" class="btn btn-primary pull-right">Save</button>
                                         <a href="<?php echo base_url('section')?>" class="btn btn-default"> Cancel</a>
                                     </div> 
                                 </form>
