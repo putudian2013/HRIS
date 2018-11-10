@@ -57,7 +57,8 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Tax Status Name</th>                                                                                            
+                                                <th>Tax Status Name</th>
+                                                <th>Tax Status Code</th>
                                                 <th>Action</th>                                                
                                             </tr>
                                         </thead>
@@ -69,7 +70,8 @@
                                             ?>                                                                                                
                                                     <tr>
                                                         <td width="5%"><?php echo $no; ?></td>                                               
-                                                        <td><?php echo $row->tax_status_name; ?></td>                                                                                                             
+                                                        <td><?php echo $row->tax_status_name; ?></td>
+                                                        <td><?php echo $row->tax_status_code; ?></td>
                                                         <td width="10%">                                                   
                                                             <a href="<?php echo base_url('taxStatus/edit/') . $row->tax_status_id; ?>" title="Edit" class="btn btn-success"> <i class="fa fa-pencil"></i> </a>
                                                             <a data-id="<?= $row->tax_status_id; ?>" title="Delete" class="btn btn-danger btn-delete"> <i class="fa fa-times"></i> </a>

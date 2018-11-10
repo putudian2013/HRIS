@@ -9,9 +9,9 @@
             
         }
         
-        function insertTaxStatus($taxStatusName){
+        function insertTaxStatus($taxStatusName,$taxStatusCode){
                         
-            $sql = "INSERT INTO hr_tax_status VALUES (NULL, '".$taxStatusName."')";
+            $sql = "INSERT INTO hr_tax_status VALUES (NULL, '".$taxStatusName."', '".$taxStatusCode."')";
             $this->db->query($sql);
             
         }
@@ -21,8 +21,8 @@
             return $result;
 	}
         
-        function updateTaxStatus($taxStatusID,$taxStatusName){
-            $sql = "UPDATE hr_tax_status SET tax_status_name = '".$taxStatusName."' where tax_status_id = '".$taxStatusID."'";
+        function updateTaxStatus($taxStatusID,$taxStatusName,$taxStatusCode){
+            $sql = "UPDATE hr_tax_status SET tax_status_name = '".$taxStatusName."', tax_status_code = '".$taxStatusCode."' where tax_status_id = '".$taxStatusID."'";
             $this->db->query($sql);
         }
         

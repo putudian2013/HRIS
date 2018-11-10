@@ -62,23 +62,29 @@
                                         <?php 
                                             $taxStatusName = "";
                                             $taxStatusID = "";
+                                            $taxStatusCode = "";
                                             if($action == "edit"){
                                                 foreach ($taxStatus->result() as $row) : 
                                                     $taxStatusName = $row->tax_status_name;
                                                     $taxStatusID = $row->tax_status_id;
+                                                    $taxStatusCode = $row->tax_status_code;
                                                 endforeach;
                                             }
                                         ?>                                        
                                         <div class="form-group">
                                             <label for="taxStatusName">Tax Status Name</label>
-                                            <input type="text" class="form-control" name="taxStatusName" id="taxStatusName" placeholder="Example : S" required value="<?php echo $taxStatusName ?>">
+                                            <input type="text" class="form-control" name="taxStatusName" id="taxStatusName" placeholder="Example : Single" required value="<?php echo $taxStatusName ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="taxStatusCode">Tax Status Code</label>
+                                            <input type="text" class="form-control" name="taxStatusCode" id="taxStatusCode" placeholder="Example : S-0" required value="<?php echo $taxStatusCode ?>">
                                         </div>
                                         <div class="form-group">                                            
                                             <input type="hidden" class="form-control" name="taxStatusID" id="taxStatusID" value="<?php echo $taxStatusID ?>">
                                         </div>
                                     </div>                                                                
                                     <div class="box-footer">                                                                                                            
-                                        <button type="submit" class="btn btn-primary"><?= ucwords($formAction) ?></button>
+                                        <button type="submit" class="btn btn-primary pull-right"><?= ucwords($formAction) ?></button>
                                         <a href="<?php echo base_url('taxStatus')?>" class="btn btn-default"> Cancel</a>
                                     </div> 
                                 </form>

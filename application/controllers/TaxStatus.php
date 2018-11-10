@@ -24,7 +24,8 @@
         function save(){
             
             $taxStatusName = $this->input->post('taxStatusName');
-            $this->TaxStatusModel->insertTaxStatus($taxStatusName);
+            $taxStatusCode = $this->input->post('taxStatusCode');
+            $this->TaxStatusModel->insertTaxStatus($taxStatusName,$taxStatusCode);
             redirect('taxStatus');
         }
         
@@ -39,7 +40,8 @@
         function update(){
             $taxStatusName = $this->input->post('taxStatusName');
             $taxStatusID = $this->input->post('taxStatusID');
-            $this->TaxStatusModel->updateTaxStatus($taxStatusID,$taxStatusName);
+            $taxStatusCode = $this->input->post('taxStatusCode');
+            $this->TaxStatusModel->updateTaxStatus($taxStatusID,$taxStatusName,$taxStatusCode);
             redirect('taxStatus');
         }
         
