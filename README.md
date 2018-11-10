@@ -3,6 +3,10 @@ This is my version of Human Resource Information System.
 
 # Changelog
 
+## [v0.0.3] - 10 November 2018
+### Added 
+- Employee Data Management
+
 ## [v0.0.2] - 9 November 2018
 ### Added 
 - Master Data Employee - Nationality
