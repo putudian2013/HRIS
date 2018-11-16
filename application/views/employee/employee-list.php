@@ -64,6 +64,7 @@
                                                 <th>Position</th>
                                                 <th>Category</th>                                                
                                                 <th>Commencing Date</th>                                                
+                                                <th>Contract End Date</th>                                                
                                                 <th>Action</th>                                                
                                             </tr>
                                         </thead>
@@ -83,7 +84,8 @@
                                                         <td><?php echo $row->section_name; ?></td>
                                                         <td><?php echo $row->position_name; ?></td>
                                                         <td><?php echo $row->emp_category_name; ?></td>
-                                                        <td><?php echo $row->commencing_date; ?></td>                                                        
+                                                        <td><?php echo $row->commencing_date; ?></td>
+                                                        <td><?php echo $row->contract_end_date; ?></td>
                                                         <td width="10%">                                                   
                                                             <a href="<?php echo base_url('employee/edit/') . $row->employee_id . "/" . $row->company_id . "/" . $row->division_id . "/" . $row->department_id ; ?>" title="Edit" class="btn btn-success"> <i class="fa fa-pencil"></i> </a>
                                                             <a data-id="<?= $row->employee_id; ?>" title="Delete" class="btn btn-danger btn-delete"> <i class="fa fa-times"></i> </a>

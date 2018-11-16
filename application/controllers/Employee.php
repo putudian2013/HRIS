@@ -17,6 +17,7 @@
             $this->load->model('TaxStatusModel');
             $this->load->model('LevelModel');
             $this->load->model('EmployeeCategoryModel');
+            $this->load->model('FamilyModel');
         }
         
         function index(){
@@ -72,6 +73,7 @@
             $bpjsKetenagakerjaanNumber = $this->input->post("bpjsKetenagakerjaanNumber");  
             $bpjsKetenagakerjaanJoinDate = $this->input->post("bpjsKetenagakerjaanJoinDate");  
             $taxStatusID = $this->input->post("taxStatus");
+            $contractEndDate = $this->input->post("contractEndDate");
             
             $data = array(
                 'payroll_number' => $payrollNumber,
@@ -103,6 +105,7 @@
                 'bpjs_ketenagakerjaan_number' => $bpjsKetenagakerjaanNumber,
                 'bpjs_ketenagakerjaan_join_date' => $bpjsKetenagakerjaanJoinDate,
                 'tax_status_id' => $taxStatusID,
+                'contract_end_date' => $contractEndDate
             );
             
             $this->EmployeeModel->insertEmployee($data);
@@ -192,7 +195,8 @@
             $empCategoryID = $this->input->post("empCategory");  
             $levelID = $this->input->post("level");  
             $commencingDate = $this->input->post("commencingDate");  
-            
+            $contractEndDate = $this->input->post("contractEndDate");  
+                       
             $data = array(
                 'company_id' => $companyID,
                 'division_id' => $divisionID,
@@ -201,7 +205,8 @@
                 'position_id' => $positionID,
                 'commencing_date' => $commencingDate,
                 'emp_category_id' => $empCategoryID,                
-                'level_id' => $levelID               
+                'level_id' => $levelID,
+                'contract_end_date' => $contractEndDate
             );
             
             $this->db->where('employee_id', $employeeID);
@@ -256,6 +261,13 @@
         
         function delete($employeeID) {
             $this->EmployeeModel->deleteEmployee($employeeID);
+        }
+        
+        function family($employeeID){    
+            
+            $data['family'] = $this->FamilyModel->getEmployeeFamily($employeeID);           
+            $this->load->view('employee/family-member', $data);        
+            
         }
         
     }

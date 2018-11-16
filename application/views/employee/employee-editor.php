@@ -8,38 +8,6 @@
 ?>
 <?php    
 
-    $employeeID = "";
-    $payrollNumber = "";    
-    $fullName = "";
-    $primaryAddress = "";
-    $secondaryAddress = "";
-    $phoneNumber = "";
-    $gender = "";
-    $birthPlace = "";
-    $birthDate = "";    
-    $religionID = "";
-    $maritalStatusID = "";
-    $bloodType = "";
-    $raceID = "";
-    $nationalityID = "";
-    $idCardType = "";
-    $idCardNumber = "";
-    $email = "";
-    $companyID = "";
-    $divisionID = "";
-    $departmentID = "";
-    $sectionID = "";
-    $positionID = "";
-    $commencingDate = "";  
-    $bpjsKesehatanNumber = "";  
-    $bpjsKesehatanJoinDate = "";  
-    $bpjsKetenagakerjaanNumber = "";  
-    $bpjsKetenagakerjaanJoinDate = "";  
-    $taxStatusID = "";
-    $empCategoryID = "";
-    $levelID = "";
-    
-
     if($action == "edit"){
         foreach ($employee->result() as $row) :             
             $employeeID = $row->employee_id;
@@ -72,6 +40,7 @@
             $taxStatusID = $row->tax_status_id;
             $empCategoryID = $row->emp_category_id;
             $levelID = $row->level_id;
+            $contractEndDate = $row->contract_end_date;
         endforeach;
     }
 ?>
@@ -131,28 +100,28 @@
                                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Personal Data
                                                     <span class="fa fa-caret-down"></span></button>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="<?php echo base_url('level')?>"> Family Member</a></li>
+                                                    <li><a href="<?php echo base_url('employee/family') . "/" . $employeeID ?>"> Family Member</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('level')?>"> Competencies</a></li>
+                                                    <li><a href="<?php echo base_url('competencies') . "/" . $employeeID?>"> Competencies</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('level')?>"> Education</a></li>
+                                                    <li><a href="<?php echo base_url('education') . "/" . $employeeID?>"> Education</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('level')?>"> Experience</a></li>                                                    
+                                                    <li><a href="<?php echo base_url('experience') . "/" . $employeeID?>"> Experience</a></li>                                                    
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('level')?>"> Picture</a></li>                                                    
+                                                    <li><a href="<?php echo base_url('picture') . "/" . $employeeID?>"> Picture</a></li>                                                    
                                                 </ul>
                                             </div>                                            
                                             <div class="input-group-btn">
                                                 <button style="margin-left: 5px" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Company Data
                                                     <span class="fa fa-caret-down"></span></button>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="<?php echo base_url('level')?>"> Career Path</a></li>
+                                                    <li><a href="<?php echo base_url('career') . "/" . $employeeID?>"> Career Path</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('level')?>"> Training History</a></li>
+                                                    <li><a href="<?php echo base_url('training') . "/" . $employeeID?>"> Training History</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('level')?>"> Warning & Reprimand</a></li>
+                                                    <li><a href="<?php echo base_url('warningReprimand') . "/" . $employeeID?>"> Warning & Reprimand</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('level')?>"> Award</a></li>                                                    
+                                                    <li><a href="<?php echo base_url('award') . "/" . $employeeID?>"> Award</a></li>                                                    
                                                 </ul>
                                             </div>
                                             <a href="<?php echo base_url('level')?>" class="btn btn-danger pull-right"> Resignation</a>
@@ -413,6 +382,15 @@
                                                             <input type="text" class="form-control pull-right" id="commencingDate" name="commencingDate" value="<?php echo $commencingDate ?>">
                                                         </div>
                                                     </div>
+                                                    <div class="form-group">
+                                                        <label>Contract End Date</label>                                           
+                                                        <div class="input-group">
+                                                            <div class="input-group-addon">
+                                                                <i class="fa fa-calendar"></i>
+                                                            </div>
+                                                            <input type="text" class="form-control pull-right" id="contractEndDate" name="contractEndDate" value="<?php echo $contractEndDate ?>">
+                                                        </div>
+                                                    </div>
                                                     <div class="form-group">                                            
                                                         <input type="hidden" class="form-control" name="employeeID" id="employeeID" value="<?php echo $employeeID ?>">
                                                         <input type="hidden" class="form-control" name="companyID" id="companyID" value="<?php echo $companyID ?>">
@@ -560,12 +538,12 @@
                                         <?php 
                                             if($action == "add") {                                                            
                                         ?>
-                                        <button type="submit" class="btn btn-primary"><?= ucwords($formAction) ?></button>
+                                        <button type="submit" class="btn btn-primary pull-right"><?= ucwords($formAction) ?></button>
                                         <a href="<?php echo base_url('employee')?>" class="btn btn-default"> Cancel</a>
                                         <?php
                                             } else {
                                         ?>
-                                        <a href="<?php echo base_url('employee')?>" class="btn btn-default pull-right"> Cancel</a>
+                                        <a href="<?php echo base_url('employee')?>" class="btn btn-default pull-right"><i class="fa fa-arrow-left"></i> Back to Employee List</a>
                                         <?php
                                             }
                                         ?>                                        
@@ -616,42 +594,9 @@
                 })                           
             })
         </script> 
-        <script>
+        <script>            
             $(function(){
-                $('#birthDate').daterangepicker({                    
-                    singleDatePicker: true,                                                
-                    showDropdowns : true,
-                    drops : "down",
-                    opens : 'right',                    
-                    locale: {
-                        format: 'YYYY-MM-DD'
-                    }
-                })                                
-            })
-            $(function(){
-                $('#bpjsKesehatanJoinDate').daterangepicker({                    
-                    singleDatePicker: true,                                                
-                    showDropdowns : true,
-                    drops : "down",
-                    opens : 'right',                    
-                    locale: {
-                        format: 'YYYY-MM-DD'
-                    }
-                })                                
-            })
-            $(function(){
-                $('#bpjsKetenagakerjaanJoinDate').daterangepicker({                    
-                    singleDatePicker: true,                                                
-                    showDropdowns : true,
-                    drops : "down",
-                    opens : 'right',                    
-                    locale: {
-                        format: 'YYYY-MM-DD'
-                    }
-                })                                
-            })
-            $(function(){
-                $('#commencingDate').daterangepicker({                    
+                $('#birthDate, #bpjsKesehatanJoinDate, #bpjsKetenagakerjaanJoinDate, #commencingDate, #contractEndDate').daterangepicker({                    
                     singleDatePicker: true,                                                
                     showDropdowns : true,
                     drops : "down",
