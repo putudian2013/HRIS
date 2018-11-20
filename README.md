@@ -6,6 +6,7 @@ This is my version of Human Resource Information System.
 ## [v0.0.5] - 20 November 2018
 ### Added 
 - Employee Picture
+- Employee Document
 
 ### Fixed
 - Bug in Add New Employee
