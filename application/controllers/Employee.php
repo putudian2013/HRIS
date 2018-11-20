@@ -18,6 +18,7 @@
             $this->load->model('LevelModel');
             $this->load->model('EmployeeCategoryModel');
             $this->load->model('FamilyModel');
+            $this->load->model('DocumentModel');
         }
         
         function index(){
@@ -284,6 +285,19 @@
             
             $this->load->view('employee/picture', $data);
             
-        }                
+        } 
+        
+        function document($employeeID, $companyID, $divisionID, $departmentID){    
+            
+            $data["employeeID"] = $employeeID;
+            $data["companyID"] = $companyID;
+            $data["divisionID"] = $divisionID;
+            $data["departmentID"] = $departmentID;
+            
+            $data["document"] = $this->DocumentModel->getAllEmployeeDocument($employeeID);            
+            
+            $this->load->view('employee/document', $data);
+            
+        } 
         
     }

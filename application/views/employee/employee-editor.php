@@ -140,7 +140,7 @@
                                                     <li class="divider"></li>
                                                     <li><a href="<?php echo base_url('experience') . "/" . $employeeID?>"> Experience</a></li>                                                    
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('employee/picture/') . $row->employee_id . "/" . $row->company_id . "/" . $row->division_id . "/" . $row->department_id ; ?>"> Picture</a></li>                                                    
+                                                    <li><a href="<?php echo base_url('employee/picture/') . $row->employee_id . "/" . $row->company_id . "/" . $row->division_id . "/" . $row->department_id;?>"> Picture</a></li>                                                    
                                                 </ul>
                                             </div>                                            
                                             <div class="input-group-btn">
@@ -156,6 +156,10 @@
                                                     <li><a href="<?php echo base_url('award') . "/" . $employeeID?>"> Award</a></li>                                                    
                                                 </ul>
                                             </div>
+                                            
+                                            <a style="margin-left: 5px" href="<?php echo base_url('employee/document/') . $row->employee_id . "/" . $row->company_id . "/" . $row->division_id . "/" . $row->department_id;?>" class="btn btn-primary"> Document</a>
+                                            
+                                            
                                             <a href="<?php echo base_url('level')?>" class="btn btn-danger pull-right"> Resignation</a>
                                             <a style="margin-right: 5px" href="<?php echo base_url('level')?>" class="btn btn-success pull-right"> Mutation</a>
                                         </div>
