@@ -270,4 +270,20 @@
             
         }
         
+        function picture($employeeID, $companyID, $divisionID, $departmentID){    
+            
+            $data["employeeID"] = $employeeID;
+            $data["companyID"] = $companyID;
+            $data["divisionID"] = $divisionID;
+            $data["departmentID"] = $departmentID;
+            
+            $employee = $this->EmployeeModel->getEmployee($employeeID);
+            foreach ($employee->result() as $row) :
+                $data["pictureName"] = $row->picture_filename;
+            endforeach;
+            
+            $this->load->view('employee/picture', $data);
+            
+        }                
+        
     }

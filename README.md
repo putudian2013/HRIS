@@ -3,6 +3,13 @@ This is my version of Human Resource Information System.
 
 # Changelog
 
+## [v0.0.5] - 20 November 2018
+### Added 
+- Employee Picture
+
+### Fixed
+- Bug in Add New Employee
+
 ## [v0.0.4] - 16 November 2018
 ### Added 
 - Expired Employee Contract Reminder on Dashboard

@@ -140,7 +140,7 @@
                                                     <li class="divider"></li>
                                                     <li><a href="<?php echo base_url('experience') . "/" . $employeeID?>"> Experience</a></li>                                                    
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('employee/picture') . "/" . $employeeID?>"> Picture</a></li>                                                    
+                                                    <li><a href="<?php echo base_url('employee/picture/') . $row->employee_id . "/" . $row->company_id . "/" . $row->division_id . "/" . $row->department_id ; ?>"> Picture</a></li>                                                    
                                                 </ul>
                                             </div>                                            
                                             <div class="input-group-btn">
