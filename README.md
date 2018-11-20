@@ -9,6 +9,7 @@ This is my version of Human Resource Information System.
 
 ### Fixed
 - Bug in Add New Employee
+- Better "No Employee Picture Available" Picture
 
 ## [v0.0.4] - 16 November 2018
 ### Added 
