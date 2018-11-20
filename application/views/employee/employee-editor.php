@@ -7,6 +7,38 @@
     }
 ?>
 <?php    
+    
+    $employeeID = "";
+    $payrollNumber = "";    
+    $fullName = "";
+    $primaryAddress = "";
+    $secondaryAddress = "";
+    $phoneNumber = "";
+    $gender = "";
+    $birthPlace = "";
+    $birthDate = "";    
+    $religionID = "";
+    $maritalStatusID = "";
+    $bloodType = "";
+    $raceID = "";
+    $nationalityID = "";
+    $idCardType = "";
+    $idCardNumber = "";
+    $email = "";
+    $companyID = "";
+    $divisionID = "";
+    $departmentID = "";
+    $sectionID = "";
+    $positionID = "";
+    $commencingDate = "";  
+    $bpjsKesehatanNumber = "";  
+    $bpjsKesehatanJoinDate = "";  
+    $bpjsKetenagakerjaanNumber = "";  
+    $bpjsKetenagakerjaanJoinDate = "";  
+    $taxStatusID = "";
+    $empCategoryID = "";
+    $levelID = "";
+    $contractEndDate = "";
 
     if($action == "edit"){
         foreach ($employee->result() as $row) :             
@@ -108,7 +140,7 @@
                                                     <li class="divider"></li>
                                                     <li><a href="<?php echo base_url('experience') . "/" . $employeeID?>"> Experience</a></li>                                                    
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('picture') . "/" . $employeeID?>"> Picture</a></li>                                                    
+                                                    <li><a href="<?php echo base_url('employee/picture') . "/" . $employeeID?>"> Picture</a></li>                                                    
                                                 </ul>
                                             </div>                                            
                                             <div class="input-group-btn">
