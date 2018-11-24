@@ -9,25 +9,25 @@
             
         }
         
-        function insertCompany($companyName){
+        function insertRelationship($relationshipName){
             
-            $sql = "INSERT INTO hr_company VALUES (NULL, '".$companyName."')";
+            $sql = "INSERT INTO hr_relationship VALUES (NULL, '".$relationshipName."')";
             $this->db->query($sql);
             
         }
         
-        function getCompany($companyID){
-            $result = $this->db->query("SELECT * FROM hr_company hc where hc.company_id ='$companyID'");
+        function getRelationship($relationshipID){
+            $result = $this->db->query("SELECT * FROM hr_relationship hc where hc.relationship_id ='$relationshipID'");
             return $result;
 	}
         
-        function updateCompany($companyID,$companyName){
-            $sql = "UPDATE hr_company SET company_name = '".$companyName."' where company_id = '".$companyID."'";
+        function updateRelationship($relationshipID,$relationshipName){
+            $sql = "UPDATE hr_relationship SET relationship_name = '".$relationshipName."' where relationship_id = '".$relationshipID."'";
             $this->db->query($sql);
         }
         
-        function deleteCompany($companyID){
-            $sql = "DELETE FROM hr_company where company_id = '".$companyID."'";
+        function deleteRelationship($relationshipID){
+            $sql = "DELETE FROM hr_relationship where relationship_id = '".$relationshipID."'";
             $this->db->query($sql);
         }
         
