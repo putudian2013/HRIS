@@ -264,7 +264,12 @@
             $this->EmployeeModel->deleteEmployee($employeeID);
         }
         
-        function family($employeeID){    
+        function family($employeeID, $companyID, $divisionID, $departmentID){    
+            
+            $data["employeeID"] = $employeeID;
+            $data["companyID"] = $companyID;
+            $data["divisionID"] = $divisionID;
+            $data["departmentID"] = $departmentID;
             
             $data['family'] = $this->FamilyModel->getEmployeeFamily($employeeID);           
             $this->load->view('employee/family-member', $data);        

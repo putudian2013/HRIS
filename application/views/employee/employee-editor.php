@@ -132,7 +132,7 @@
                                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Personal Data
                                                     <span class="fa fa-caret-down"></span></button>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="<?php echo base_url('employee/family') . "/" . $employeeID ?>"> Family Member</a></li>
+                                                    <li><a href="<?= base_url('employee/family/') . $row->employee_id . "/" . $row->company_id . "/" . $row->division_id . "/" . $row->department_id;?>"> Family Member</a></li>
                                                     <li class="divider"></li>
                                                     <li><a href="<?php echo base_url('competencies') . "/" . $employeeID?>"> Competencies</a></li>
                                                     <li class="divider"></li>
@@ -140,7 +140,7 @@
                                                     <li class="divider"></li>
                                                     <li><a href="<?php echo base_url('experience') . "/" . $employeeID?>"> Experience</a></li>                                                    
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('employee/picture/') . $row->employee_id . "/" . $row->company_id . "/" . $row->division_id . "/" . $row->department_id;?>"> Picture</a></li>                                                    
+                                                    <li><a href="<?= base_url('employee/picture/') . $row->employee_id . "/" . $row->company_id . "/" . $row->division_id . "/" . $row->department_id;?>"> Picture</a></li>                                                    
                                                 </ul>
                                             </div>                                            
                                             <div class="input-group-btn">
@@ -579,7 +579,7 @@
                                         <?php
                                             } else {
                                         ?>
-                                        <a href="<?php echo base_url('employee')?>" class="btn btn-default pull-right"><i class="fa fa-arrow-left"></i> Back to Employee List</a>
+                                        <a href="<?php echo base_url('employee')?>" class="btn btn-default"><i class="fa fa-arrow-left"></i> Back to Employee List</a>
                                         <?php
                                             }
                                         ?>                                        

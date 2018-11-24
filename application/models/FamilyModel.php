@@ -11,26 +11,26 @@
             
         }
         
-        function insertCompany($companyName){
+        function insertFamily($data){
             
-            $sql = "INSERT INTO hr_company VALUES (NULL, '".$companyName."')";
-            $this->db->query($sql);
+            $this->db->insert('hr_emp_family', $data);
             
         }
         
-        function getCompany($companyID){
-            $result = $this->db->query("SELECT * FROM hr_company hc where hc.company_id ='$companyID'");
+        function getFamily($familyID){
+            $result = $this->db->query("SELECT * FROM hr_emp_family hef where hef.emp_family_id ='$familyID'");
             return $result;
 	}
         
-        function updateCompany($companyID,$companyName){
-            $sql = "UPDATE hr_company SET company_name = '".$companyName."' where company_id = '".$companyID."'";
-            $this->db->query($sql);
+        function updateFamily($data,$where){
+            
+            $this->db->where('emp_family_id', $where);
+            $this->db->update('hr_emp_family', $data);
         }
         
-        function deleteCompany($companyID){
-            $sql = "DELETE FROM hr_company where company_id = '".$companyID."'";
-            $this->db->query($sql);
+        function deleteFamily($familyID){
+            $this->db->where('emp_family_id', $familyID);
+            $this->db->delete('hr_emp_family');
         }
         
         

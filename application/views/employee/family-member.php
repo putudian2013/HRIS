@@ -78,7 +78,7 @@
                                                         <td><?php echo $row->address; ?></td>
                                                         <td><?php echo $row->phone_number; ?></td>                                                        
                                                         <td width="10%">                                                   
-                                                            <a href="<?php echo base_url('family/edit/') . $row->emp_family_id ; ?>" title="Edit" class="btn btn-success"> <i class="fa fa-pencil"></i> </a>
+                                                            <a href="<?php echo base_url('family/edit/') . $row->emp_family_id . '/' . $employeeID . '/' . $companyID . '/' . $divisionID  . '/' . $departmentID ; ?>" title="Edit" class="btn btn-success"> <i class="fa fa-pencil"></i> </a>
                                                             <a data-id="<?= $row->emp_family_id; ?>" title="Delete" class="btn btn-danger btn-delete"> <i class="fa fa-times"></i> </a>
                                                         </td>
                                                     </tr>
@@ -87,8 +87,9 @@
                                     </table>
                                 </div>                                
                                 
-                                <div class="box-footer">                                                                        
-                                    <a href="<?php echo base_url('family/add/') . $row->employee_id ?>" class="btn btn-primary pull-right"> <i class="fa fa-plus"></i> Add New Employee Family</a>
+                                <div class="box-footer"> 
+                                    <a href="<?= base_url('employee/edit/' . $employeeID . '/' . $companyID . '/' . $divisionID  . '/' . $departmentID)?>" class="btn btn-default"> <i class="fa fa-arrow-left"></i> Back to Personal Data</a>
+                                    <a href="<?= base_url('family/add/' . $employeeID . '/' . $companyID . '/' . $divisionID  . '/' . $departmentID) ?>" class="btn btn-primary pull-right"> <i class="fa fa-plus"></i> Add New Employee Family</a>
                                 </div>                                 
                             </div>                            
                         </div>
@@ -127,7 +128,7 @@
                 $('.btn-delete').click(function(){
                     var id = $(this).data("id"); 
                     swal({
-                        title: 'Are You Sure to Delete this Employee ?',                        
+                        title: 'Are You Sure to Delete this Family Member ?',                        
                         type: 'warning',
                         text : 'Deleted Data Cannot be Restored',
                         confirmButtonText: 'Delete',
@@ -138,13 +139,13 @@
                         if (result.value) {
                             
                             $.ajax({
-                                url : "<?php echo base_url(); ?>employee/delete/" + id,                        
+                                url : "<?php echo base_url(); ?>family/delete/" + id,                        
                                 method : "GET",                                                                                
                                 success: function(data){
                                     
                                     //swal('Level Deleted','Deleted Data Cannot Be Restored','success');
                                     swal({
-                                        title: 'Employee Deleted',                                          
+                                        title: 'Family Member Deleted',                                          
                                         type: 'success',
                                         timer: 1000,
                                         text : 'Deleted Data Cannot be Restored',                                        
@@ -155,9 +156,9 @@
                                 },
                                 error : function(data){
                                     swal({
-                                        title: 'Employee Cannot Deleted',                                          
+                                        title: 'Family Member Cannot Deleted',                                          
                                         type: 'error',
-                                        text : 'Make Sure This Employee is not Used by Other Module or Contact Your System Administator',                                        
+                                        text : 'Make Sure This Family Member is not Used by Other Module or Contact Your System Administator',                                        
                                         width:'52rem'                                        
                                     })
                                 }

@@ -18,7 +18,7 @@
 
     if($action == "edit"){
         foreach ($family->result() as $row) :             
-            $familyID = $row->family_id;
+            $familyID = $row->emp_family_id;
             $employeeID = $row->employee_id;              
             $fullName = $row->full_name;
             $relationshipID = $row->relationship_id;         
@@ -114,21 +114,23 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="address">Address</label>
-                                            <input type="text" class="form-control" name="address" id="address" placeholder="Example : Victoria Street" required value="<?php echo $address ?>">
+                                            <input type="text" class="form-control" name="address" id="address" placeholder="Example : Victoria Street" required value="<?= $address ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="phoneNumber">Phone Number</label>
-                                            <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Example : +62361" required value="<?php echo $phoneNumber ?>">
+                                            <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Example : +62361" required value="<?= $phoneNumber ?>">
                                         </div>
                                         <div class="form-group">                                            
-                                            <input type="hidden" class="form-control" name="familyID" id="familyID" value="<?php echo $familyID ?>">
-                                            
-                                            <input type="hidden" class="form-control" name="employeeID" id="employeeID" value="<?php echo $employee ?>">
+                                            <input type="hidden" class="form-control" name="familyID" id="familyID" value="<?= $familyID ?>">                                            
+                                            <input type="hidden" class="form-control" name="employeeID" id="employeeID" value="<?= $employee ?>">
+                                            <input type="hidden" class="form-control" name="companyID" id="companyID" value="<?= $companyID ?>">
+                                            <input type="hidden" class="form-control" name="divisionID" id="divisionID" value="<?= $divisionID ?>">
+                                            <input type="hidden" class="form-control" name="departmentID" id="departmentID" value="<?= $departmentID ?>">
                                         </div>
                                     </div>                                                                
                                     <div class="box-footer">                                                                                                            
                                         <button type="submit" class="btn btn-primary pull-right"><?= ucwords($formAction) ?></button>
-                                        <a href="<?php echo base_url('level')?>" class="btn btn-default"> Cancel</a>
+                                        <a href="<?= base_url('employee/family/' . $employeeID . '/' . $companyID . '/' . $divisionID  . '/' . $departmentID)?>" class="btn btn-default"> <i class="fa fa-arrow-left"></i> Back to Family List</a>
                                     </div> 
                                 </form>
                             </div>                            
