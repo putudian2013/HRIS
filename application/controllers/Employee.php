@@ -19,6 +19,12 @@
             $this->load->model('EmployeeCategoryModel');
             $this->load->model('FamilyModel');
             $this->load->model('DocumentModel');
+            $this->load->model('RelationshipModel');
+            $this->load->model('EducationModel');
+            $this->load->model('ReligionModel');
+            $this->load->model('EmployeeCompetencyModel');
+            $this->load->model('EmployeeEducationModel');
+            $this->load->model('EmployeeExperienceModel');
         }
         
         function index(){
@@ -270,7 +276,11 @@
             $data["companyID"] = $companyID;
             $data["divisionID"] = $divisionID;
             $data["departmentID"] = $departmentID;
-            
+            $data["relationship"] = $this->RelationshipModel->getAllRelationship();
+            $data["religion"] = $this->ReligionModel->getAllReligion();
+            $data["education"] = $this->EducationModel->getAllEducation();
+            $data["maritalStatus"] = $this->MaritalStatusModel->getAllMaritalStatus();
+            $data["nationality"] = $this->NationalityModel->getAllNationality();
             $data['family'] = $this->FamilyModel->getEmployeeFamily($employeeID);           
             $this->load->view('employee/family-member', $data);        
             
@@ -302,6 +312,45 @@
             $data["document"] = $this->DocumentModel->getAllEmployeeDocument($employeeID);            
             
             $this->load->view('employee/document', $data);
+            
+        } 
+        
+        function competency($employeeID, $companyID, $divisionID, $departmentID){    
+            
+            $data["employeeID"] = $employeeID;
+            $data["companyID"] = $companyID;
+            $data["divisionID"] = $divisionID;
+            $data["departmentID"] = $departmentID;
+            
+            $data["competency"] = $this->EmployeeCompetencyModel->getAllEmployeeCompetency($employeeID);            
+            
+            $this->load->view('employee/competency', $data);
+            
+        } 
+        
+        function education($employeeID, $companyID, $divisionID, $departmentID){    
+            
+            $data["employeeID"] = $employeeID;
+            $data["companyID"] = $companyID;
+            $data["divisionID"] = $divisionID;
+            $data["departmentID"] = $departmentID;
+            
+            $data["education"] = $this->EmployeeEducationModel->getAllEmployeeEducation($employeeID);            
+            
+            $this->load->view('employee/education', $data);
+            
+        } 
+        
+        function experience($employeeID, $companyID, $divisionID, $departmentID){    
+            
+            $data["employeeID"] = $employeeID;
+            $data["companyID"] = $companyID;
+            $data["divisionID"] = $divisionID;
+            $data["departmentID"] = $departmentID;
+            
+            $data["experience"] = $this->EmployeeExperienceModel->getAllEmployeeExperience($employeeID);            
+            
+            $this->load->view('employee/experience', $data);
             
         } 
         

@@ -6,7 +6,13 @@ This is my version of Human Resource Information System.
 ## [v0.0.6] - 24 November 2018
 ### Added 
 - Master Data Employee - Relationship
+- Master Data Employee - Education
+- Master Data Competency - Competency Area
+- Master Data Competency - Competency
 - Employee Family Member
+- Employee Competency
+- Employee Education
+- Employee Experience
 
 ## [v0.0.5] - 20 November 2018
 ### Added 

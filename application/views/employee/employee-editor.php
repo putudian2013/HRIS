@@ -134,11 +134,11 @@
                                                 <ul class="dropdown-menu">
                                                     <li><a href="<?= base_url('employee/family/') . $row->employee_id . "/" . $row->company_id . "/" . $row->division_id . "/" . $row->department_id;?>"> Family Member</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('competencies') . "/" . $employeeID?>"> Competencies</a></li>
+                                                    <li><a href="<?= base_url('employee/competency/') . $row->employee_id . "/" . $row->company_id . "/" . $row->division_id . "/" . $row->department_id;?>"> Competency</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('education') . "/" . $employeeID?>"> Education</a></li>
+                                                    <li><a href="<?= base_url('employee/education/') . $row->employee_id . "/" . $row->company_id . "/" . $row->division_id . "/" . $row->department_id;?>"> Education</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="<?php echo base_url('experience') . "/" . $employeeID?>"> Experience</a></li>                                                    
+                                                    <li><a href="<?= base_url('employee/experience/') . $row->employee_id . "/" . $row->company_id . "/" . $row->division_id . "/" . $row->department_id;?>"> Experience</a></li>                                                    
                                                     <li class="divider"></li>
                                                     <li><a href="<?= base_url('employee/picture/') . $row->employee_id . "/" . $row->company_id . "/" . $row->division_id . "/" . $row->department_id;?>"> Picture</a></li>                                                    
                                                 </ul>

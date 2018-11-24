@@ -7,15 +7,15 @@
             
         <li class="<?php echo $segment == 'dashboard' ? 'active' : '' ?>"><a href="<?php echo base_url('dashboard') ?>"> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
-        <li class="treeview <?php echo $segment == 'employee' || $segment == 'employeeCategory' || $segment == 'level' || $segment == 'religion'  || $segment == 'maritalStatus' || $segment == 'race' || $segment == 'nationality' || $segment == 'relationship' ? 'active' : '' ?>">
+        <li class="treeview <?php echo $segment == 'employee' || $segment == 'employeeCategory' || $segment == 'level' || $segment == 'religion'  || $segment == 'maritalStatus' || $segment == 'race' || $segment == 'nationality' || $segment == 'relationship' || $segment == 'education' ? 'active' : '' ?>">
             <a href="#"><i class="fa fa-users"></i> <span>Employee</span>
                 <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                 </span>
             </a>
             <ul class="treeview-menu">
-                <li class="<?php echo $segment == 'employee' || $segment == 'level'  || $segment == 'religion'  || $segment == 'maritalStatus' || $segment == 'race' || $segment == 'nationality' || $segment == 'relationship' ? 'active' : '' ?>"><a href="<?php echo base_url('employee') ?>"> <i class="fa fa-circle-o"></i> <span>Employee List</span></a></li>
-                <li class="treeview <?php echo $segment == 'employeeCategory' || $segment == 'level' || $segment == 'religion'  || $segment == 'maritalStatus' || $segment == 'race' || $segment == 'nationality' || $segment == 'relationship' ? 'active' : '' ?>">
+                <li class="<?php echo $segment == 'employee' || $segment == 'level'  || $segment == 'religion'  || $segment == 'maritalStatus' || $segment == 'race' || $segment == 'nationality' || $segment == 'relationship' || $segment == 'education' ? 'active' : '' ?>"><a href="<?php echo base_url('employee') ?>"> <i class="fa fa-circle-o"></i> <span>Employee List</span></a></li>
+                <li class="treeview <?php echo $segment == 'employeeCategory' || $segment == 'level' || $segment == 'religion'  || $segment == 'maritalStatus' || $segment == 'race' || $segment == 'nationality' || $segment == 'relationship' || $segment == 'education' ? 'active' : '' ?>">
                     <a href="#"><i class="fa fa-list"></i> <span>Master</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
@@ -29,6 +29,7 @@
                         <li class="<?php echo $segment == 'race' ? 'active' : '' ?>"><a href="<?php echo base_url('race') ?>"> <i class="fa fa-circle-o"></i> <span>Race</span></a></li>
                         <li class="<?php echo $segment == 'nationality' ? 'active' : '' ?>"><a href="<?php echo base_url('nationality') ?>"> <i class="fa fa-circle-o"></i> <span>Nationality</span></a></li>
                         <li class="<?php echo $segment == 'relationship' ? 'active' : '' ?>"><a href="<?php echo base_url('relationship') ?>"> <i class="fa fa-circle-o"></i> <span>Relationship</span></a></li>
+                        <li class="<?php echo $segment == 'education' ? 'active' : '' ?>"><a href="<?php echo base_url('education') ?>"> <i class="fa fa-circle-o"></i> <span>Education</span></a></li>
                     </ul>
                 </li>                
             </ul>
@@ -57,6 +58,27 @@
                 </li>                
             </ul>
         </li>
+        
+        <li class="treeview <?php echo $segment == 'competencyArea' || $segment == 'competency' ? 'active' : '' ?>">
+            <a href="#"><i class="fa fa-id-card"></i> <span>Competency</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="treeview <?php echo $segment == 'competencyArea' || $segment == 'competency'  ? 'active' : '' ?>">
+                    <a href="#"><i class="fa fa-list"></i> <span>Master</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu active">
+                        <li class="<?php echo $segment == 'competencyArea' ? 'active' : '' ?>"><a href="<?php echo base_url('competencyArea') ?>"> <i class="fa fa-circle-o"></i> <span>Competency Area</span></a></li>                                   
+                        <li class="<?php echo $segment == 'competency' ? 'active' : '' ?>"><a href="<?php echo base_url('competency') ?>"> <i class="fa fa-circle-o"></i> <span>Competency</span></a></li>                                   
+                    </ul>
+                </li>                
+            </ul>
+        </li> 
         
         <li class="treeview <?php echo $segment == 'taxStatus' ? 'active' : '' ?>">
             <a href="#"><i class="fa fa-dollar"></i> <span>Payroll</span>

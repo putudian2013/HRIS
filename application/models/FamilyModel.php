@@ -6,6 +6,10 @@
                         
             $result = $this->db->query("SELECT * FROM hr_emp_family hef 
                 inner join hr_relationship hr on hef.relationship_id = hr.relationship_id
+                inner join hr_religion hre on hef.religion_id = hre.religion_id
+                inner join hr_education he on hef.education_id = he.education_id
+                inner join hr_marital_status hms on hef.marital_status_id = hms.marital_status_id
+                inner join hr_nationality hn on hef.nationality_id = hn.nationality_id
                 where hef.employee_id = '".$employeeID."'");
             return $result;
             

@@ -11,8 +11,15 @@
     $familyID = "";
     $employeeID = "";    
     $fullName = "";
-    $relationshipID = "";
+    $idCardNumber = "";
+    $gender = "";
+    $birthPlace = "";
     $birthDate = "";
+    $religionID = "";
+    $educationID = "";
+    $maritalStatusID = "";
+    $relationshipID = "";
+    $nationalityID = "";   
     $address = "";
     $phoneNumber = "";        
 
@@ -21,8 +28,15 @@
             $familyID = $row->emp_family_id;
             $employeeID = $row->employee_id;              
             $fullName = $row->full_name;
-            $relationshipID = $row->relationship_id;         
+            $idCardNumber = $row->id_card_number;
+            $gender = $row->gender;
+            $birthPlace = $row->birth_place;    
             $birthDate = $row->birth_date;    
+            $religionID = $row->religion_id;         
+            $educationID = $row->education_id;         
+            $maritalStatusID = $row->marital_status_id;         
+            $relationshipID = $row->relationship_id;         
+            $nationalityID = $row->nationality_id;    
             $address = $row->address;
             $phoneNumber = $row->phone_number;            
         endforeach;
@@ -89,19 +103,26 @@
                                     }
                                 ?>
                                 <form action="<?php echo base_url('family/').$formAction?>" method="post">
-                                    <div class="box-body">                                                                                                                       
-                                        <div class="form-group">
-                                            <label>Relationship</label>         
-                                            <select class="form-control select2" id="relationship" name="relationship" required>
-                                                <option value="">Select...</option> 
-                                                <?php foreach ($relationship->result() as $row) : ?>                                                                                                
-                                                    <option <?= $relationshipID == $row->relationship_id ? "selected='selected'" : "" ?> value="<?php echo $row->relationship_id ?>"><?php echo $row->relationship_name ?></option>
-                                                <?php endforeach; ?>
-                                            </select>                                     
-                                        </div>
+                                    <div class="box-body">                                                                                                                                                               
                                         <div class="form-group">
                                             <label for="fullName">Full Name</label>
                                             <input type="text" class="form-control" name="fullName" id="fullName" placeholder="Example : John Doe" required value="<?php echo $fullName ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="idCardNumber">ID Card Number</label>
+                                            <input type="text" class="form-control" name="idCardNumber" id="idCardNumber" placeholder="Example : 5102" required value="<?php echo $idCardNumber ?>">
+                                        </div>
+                                        <div class="form-group" style="width: 100%;">
+                                            <label>Gender</label>         
+                                            <select class="form-control select2" id="gender" name="gender" required>
+                                                <option value="">Select...</option>
+                                                <option <?= $gender == "0" ? "selected" : "" ?> value="0">Male</option>
+                                                <option <?= $gender == "1" ? "selected" : "" ?> value="1">Female</option>
+                                            </select>                                     
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="birthPlace">Birth Place</label>
+                                            <input type="text" class="form-control" name="birthPlace" id="birthPlace" placeholder="Example : Indonesia" required value="<?php echo $birthPlace ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Birth Date</label>                                           
@@ -111,6 +132,51 @@
                                                 </div>
                                                 <input type="text" class="form-control pull-right" id="birthDate" name="birthDate" value="<?= $birthDate ?>">
                                             </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Religion</label>         
+                                            <select class="form-control select2" id="religion" name="religion" required>
+                                                <option value="">Select...</option> 
+                                                <?php foreach ($religion->result() as $row) : ?>                                                                                                
+                                                    <option <?= $religionID == $row->religion_id ? "selected='selected'" : "" ?> value="<?php echo $row->religion_id ?>"><?php echo $row->religion_name ?></option>
+                                                <?php endforeach; ?>
+                                            </select>                                     
+                                        </div>
+                                        <div class="form-group" style="width: 100%;">
+                                            <label>Education Level</label>         
+                                            <select class="form-control select2" id="educationLevel" name="education" required>
+                                                <option value="">Select...</option>  
+                                                <?php foreach ($education->result() as $row) : ?>                                                                                                
+                                                    <option <?= $educationID == $row->education_id ? "selected='selected'" : "" ?> value="<?php echo $row->education_id ?>"><?php echo $row->education_level ?></option>
+                                                <?php endforeach; ?>
+                                            </select>                                     
+                                        </div>
+                                        <div class="form-group" style="width: 100%;">
+                                            <label>Marital Status</label>         
+                                            <select class="form-control select2" id="maritalStatus" name="maritalStatus" required>
+                                                <option value="">Select...</option>  
+                                                <?php foreach ($maritalStatus->result() as $row) : ?>                                                                                                
+                                                    <option <?= $maritalStatusID == $row->marital_status_id ? "selected='selected'" : "" ?> value="<?php echo $row->marital_status_id ?>"><?php echo $row->marital_status_name ?></option>
+                                                <?php endforeach; ?>
+                                            </select>                                     
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Relationship</label>         
+                                            <select class="form-control select2" id="relationship" name="relationship" required>
+                                                <option value="">Select...</option> 
+                                                <?php foreach ($relationship->result() as $row) : ?>                                                                                                
+                                                    <option <?= $relationshipID == $row->relationship_id ? "selected='selected'" : "" ?> value="<?php echo $row->relationship_id ?>"><?php echo $row->relationship_name ?></option>
+                                                <?php endforeach; ?>
+                                            </select>                                     
+                                        </div>
+                                        <div class="form-group" style="width: 100%;">
+                                            <label>Nationality</label>         
+                                            <select class="form-control select2" id="race" name="nationality" required>
+                                                <option value="">Select...</option>   
+                                                <?php foreach ($nationality->result() as $row) : ?>                                                                                                
+                                                    <option <?= $nationalityID == $row->nationality_id ? "selected='selected'" : "" ?> value="<?php echo $row->nationality_id ?>"><?php echo $row->nationality_name ?></option>
+                                                <?php endforeach; ?>
+                                            </select>                                     
                                         </div>
                                         <div class="form-group">
                                             <label for="address">Address</label>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Employee Family | HRIS</title>
+        <title>Master Data Education | HRIS</title>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css');?>" >
         <link rel="stylesheet" href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css');?>" > 
@@ -22,7 +22,8 @@
         <!-- Google Font -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">                
     </head>    
-    <body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
+    <body class="hold-transition skin-blue sidebar-mini
+          ">
         <div class="wrapper">
             
             <?php
@@ -33,12 +34,12 @@
             <div class="content-wrapper">
                 <section class="content-header">
                     <h1>
-                        Employee Family
+                        Education List
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>  
-                        <li>Employee</li>
-                        <li>Employee Family</li>
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Employee</a></li>  
+                        <li>Master Data</li>
+                        <li>Education</li>
                     </ol>
                 </section>
 
@@ -55,45 +56,23 @@
                                     <table id="dataTable" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>No</th>                                                                                                
-                                                <th>Full Name</th>
-                                                <th>ID Card Number</th>
-                                                <th>Gender</th>
-                                                <th>Birth Place</th>
-                                                <th>Birth Date</th>
-                                                <th>Religion</th>
-                                                <th>Education Level</th>                                                
-                                                <th>Marital Status</th>                                                
-                                                <th>Relationship</th>
-                                                <th>Nationality</th>
-                                                <th>Address</th>
-                                                <th>Phone Number</th>                                                
+                                                <th>No</th>
+                                                <th>Education Name</th>                                                                                            
                                                 <th>Action</th>                                                
                                             </tr>
                                         </thead>
                                         <tbody> 
                                             <?php
                                                 $no = 0;
-                                                foreach ($family->result() as $row) :
+                                                foreach ($education->result() as $row) :
                                                     $no++;
                                             ?>                                                                                                
                                                     <tr>
                                                         <td width="5%"><?php echo $no; ?></td>                                               
-                                                        <td><?php echo $row->full_name; ?></td>        
-                                                        <td><?php echo $row->id_card_number; ?></td>        
-                                                        <td><?php echo $row->gender; ?></td>        
-                                                        <td><?php echo $row->birth_place; ?></td>
-                                                        <td><?php echo $row->birth_date; ?></td>
-                                                        <td><?php echo $row->religion_name; ?></td>
-                                                        <td><?php echo $row->education_level; ?></td>
-                                                        <td><?php echo $row->marital_status_name; ?></td>                                                        
-                                                        <td><?php echo $row->relationship_name; ?></td>
-                                                        <td><?php echo $row->nationality_name; ?></td>                                                                                                            
-                                                        <td><?php echo $row->address; ?></td>
-                                                        <td><?php echo $row->phone_number; ?></td>                                                        
-                                                        <td>                                                   
-                                                            <a href="<?php echo base_url('family/edit/') . $row->emp_family_id . '/' . $employeeID . '/' . $companyID . '/' . $divisionID  . '/' . $departmentID ; ?>" title="Edit" class="btn btn-success"> <i class="fa fa-pencil"></i> </a>
-                                                            <a data-id="<?= $row->emp_family_id; ?>" title="Delete" class="btn btn-danger btn-delete"> <i class="fa fa-times"></i> </a>
+                                                        <td><?php echo $row->education_level; ?></td>                                                                                                             
+                                                        <td width="10%">                                                   
+                                                            <a href="<?php echo base_url('education/edit/') . $row->education_id; ?>" title="Edit" class="btn btn-success"> <i class="fa fa-pencil"></i> </a>
+                                                            <a data-id="<?= $row->education_id; ?>" title="Delete" class="btn btn-danger btn-delete"> <i class="fa fa-times"></i> </a>
                                                         </td>
                                                     </tr>
                                             <?php endforeach; ?>
@@ -101,9 +80,8 @@
                                     </table>
                                 </div>                                
                                 
-                                <div class="box-footer"> 
-                                    <a href="<?= base_url('employee/edit/' . $employeeID . '/' . $companyID . '/' . $divisionID  . '/' . $departmentID)?>" class="btn btn-default"> <i class="fa fa-arrow-left"></i> Back to Personal Data</a>
-                                    <a href="<?= base_url('family/add/' . $employeeID . '/' . $companyID . '/' . $divisionID  . '/' . $departmentID) ?>" class="btn btn-primary pull-right"> <i class="fa fa-plus"></i> Add New Employee Family</a>
+                                <div class="box-footer">                                                                        
+                                    <a href="<?php echo base_url('education/add')?>" class="btn btn-primary pull-right"> <i class="fa fa-plus"></i> Add New Education</a>
                                 </div>                                 
                             </div>                            
                         </div>
@@ -133,8 +111,7 @@
                     'searching'   : true,
                     'ordering'    : true,
                     'info'        : true,
-                    'autoWidth'   : true,
-                    scrollX: true
+                    'autoWidth'   : true
                 })                           
             })
         </script> 
@@ -143,7 +120,7 @@
                 $('.btn-delete').click(function(){
                     var id = $(this).data("id"); 
                     swal({
-                        title: 'Are You Sure to Delete this Family Member ?',                        
+                        title: 'Are You Sure to Delete this Education ?',                        
                         type: 'warning',
                         text : 'Deleted Data Cannot be Restored',
                         confirmButtonText: 'Delete',
@@ -154,13 +131,13 @@
                         if (result.value) {
                             
                             $.ajax({
-                                url : "<?php echo base_url(); ?>family/delete/" + id,                        
+                                url : "<?php echo base_url(); ?>education/delete/" + id,                        
                                 method : "GET",                                                                                
                                 success: function(data){
                                     
-                                    //swal('Level Deleted','Deleted Data Cannot Be Restored','success');
+                                    //swal('Education Deleted','Deleted Data Cannot Be Restored','success');
                                     swal({
-                                        title: 'Family Member Deleted',                                          
+                                        title: 'Education Deleted',                                          
                                         type: 'success',
                                         timer: 1000,
                                         text : 'Deleted Data Cannot be Restored',                                        
@@ -171,9 +148,9 @@
                                 },
                                 error : function(data){
                                     swal({
-                                        title: 'Family Member Cannot Deleted',                                          
+                                        title: 'Education Cannot Deleted',                                          
                                         type: 'error',
-                                        text : 'Make Sure This Family Member is not Used by Other Module or Contact Your System Administator',                                        
+                                        text : 'Make Sure This Education is not Used by Other Module or Contact Your System Administator',                                        
                                         width:'52rem'                                        
                                     })
                                 }
