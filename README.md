@@ -3,6 +3,11 @@ This is my version of Human Resource Information System.
 
 # Changelog
 
+## [v0.0.6] - 24 November 2018
+### Added 
+- Master Data Employee - Relationship
+- Employee Family Member
+
 ## [v0.0.5] - 20 November 2018
 ### Added 
 - Employee Picture
